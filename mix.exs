@@ -37,7 +37,9 @@ defmodule CulturalTrailApi.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-    {:comeonin, "~> 2.5"}]
+     {:comeonin, "~> 2.5"},
+     {:joken, "~> 1.1"},
+     {:mellon, "~> 0.1.1"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

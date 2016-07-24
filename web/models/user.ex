@@ -25,13 +25,30 @@ defmodule CulturalTrailApi.User do
     |> validate_length(:password, min: 5)
     |> hash_password
   end
-defp hash_password(changeset) do
-  if password = get_change(changeset, :password) do
-    changeset
-    |> put_change(:password_hash, Comeonin.Bcrypt.hashpwsalt(password))
-    else
+
+
+  defp hash_password(changeset) do
+    if password = get_change(changeset, :password) do
       changeset
-    end
+      |> put_change(:password_hash, Comeonin.Bcrypt.hashpwsalt(password))
+      else
+        changeset
+      end
+  end
+
+  def generate_token(user) do
+    %{user_id: user.id}
+    |> Joken.token
+    |> Joken.with_signer(Joken.hs256("secret-change-me"))
+    |> Joken.sign
+    |> Joken.get_compact
+  end
+
+  def verify_token(sessionToken) do
+    sessionToken
+    |> Joken.token
+    |> Joken.with_signer(Joken.hs256("secret-change-me"))
+    |> Joken.verify
   end
 
 end

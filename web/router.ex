@@ -13,11 +13,24 @@ defmodule CulturalTrailApi.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :authenticated do
+  plug Mellon, validator: {CulturalTrailApi.Validation, :validate, []}, header: "api-token"
+end
+
   scope "/api/", CulturalTrailApi do
+    pipe_through :authenticated
     pipe_through :api
+
+    get "/auth/validate", SessionController, :validate
+  end
+
+  scope "/", CulturalTrailApi do
+    pipe_through :api
+
     resources "/users", UserController
 
     post "/auth", RegistrationController, :create
+    post "/auth/login", SessionController, :login
   end
 
   scope "/", CulturalTrailApi do
