@@ -19,8 +19,9 @@ defmodule CulturalTrailApi.DamagedItemsControllerTest do
     {:ok, conn: conn, item: damaged_item, token: token}
   end
 
-  test "returns array of damaged items", %{conn: conn} do
+  test "Get all options for damaged options", %{conn: conn} do
     conn = get conn, damaged_items_path(conn, :index)
+    conn |> doc
     assert json_response(conn,200)
   end
 

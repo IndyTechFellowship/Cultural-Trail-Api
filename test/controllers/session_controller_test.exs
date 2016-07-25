@@ -2,7 +2,7 @@ defmodule CulturalTrailApi.SessionControllerTest do
   use CulturalTrailApi.ConnCase
 
   alias CulturalTrailApi.User
-  @valid_attrs %{email: "some content", password: "validPassword"}
+  @valid_attrs %{email: "user@example.com", password: "validPassword"}
   @invalid_attrs %{email: "non-existing-user@example.com", password: "no-password"}
 
   setup do
@@ -19,13 +19,13 @@ defmodule CulturalTrailApi.SessionControllerTest do
     assert json_response(conn, 422)
   end
 
-  test "Authenticate a valid user", %{conn: conn} do
+  test "Login a registered user", %{conn: conn} do
     conn = post conn, session_path(conn, :login), user: @valid_attrs
     conn |> doc
     assert json_response(conn, 200)["data"]["token"] != nil
   end
 
-  test "validate token", %{conn: conn, token: token} do
+  test "Check if token is valid", %{conn: conn, token: token} do
     conn = put_req_header(conn, "api-token", "Token: " <> token)
     conn = get conn, session_path(conn, :validate)
     conn |> doc

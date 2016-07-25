@@ -3,7 +3,7 @@ defmodule CulturalTrailApi.UserControllerTest do
 
   alias CulturalTrailApi.User
 
-  @valid_attrs %{email: "some content", password: "validPassword"}
+  @valid_attrs %{email: "someone@example.com", password: "validPassword"}
   @invalid_attrs %{}
 
   setup do
@@ -11,7 +11,7 @@ defmodule CulturalTrailApi.UserControllerTest do
     {:ok, conn: conn}
   end
 
-  test "creates and renders resource when data is valid", %{conn: conn} do
+  test "Create an Account", %{conn: conn} do
     conn = post conn, registration_path(conn, :create), user: @valid_attrs
     conn |> doc
     assert json_response(conn, 201)["data"]["id"]
