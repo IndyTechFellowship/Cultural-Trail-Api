@@ -3,8 +3,6 @@ defmodule CulturalTrailApi.Validation do
   alias CulturalTrailApi.User
 
   def validate({conn, token}) do
-    IO.puts("token!!!")
-    IO.inspect(token)
     User.verify_token(token)
     |> handle(conn)
   end

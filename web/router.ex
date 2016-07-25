@@ -22,6 +22,7 @@ end
     pipe_through :api
 
     get "/auth/validate", SessionController, :validate
+    get "/damages", DamagedItemsController, :index
   end
 
   scope "/", CulturalTrailApi do
