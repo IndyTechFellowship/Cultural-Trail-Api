@@ -21,12 +21,14 @@ defmodule CulturalTrailApi.SessionControllerTest do
 
   test "Authenticate a valid user", %{conn: conn} do
     conn = post conn, session_path(conn, :login), user: @valid_attrs
+    conn |> doc
     assert json_response(conn, 200)["data"]["token"] != nil
   end
 
   test "validate token", %{conn: conn, token: token} do
     conn = put_req_header(conn, "api-token", "Token: " <> token)
     conn = get conn, session_path(conn, :validate)
+    conn |> doc
     assert json_response(conn, 200)
   end
 

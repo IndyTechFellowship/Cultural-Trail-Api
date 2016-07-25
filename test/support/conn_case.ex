@@ -25,7 +25,9 @@ defmodule CulturalTrailApi.ConnCase do
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
 
+
       import CulturalTrailApi.Router.Helpers
+      import Bureaucrat.Helpers
 
       # The default endpoint for testing
       @endpoint CulturalTrailApi.Endpoint

@@ -39,7 +39,8 @@ defmodule CulturalTrailApi.Mixfile do
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.5"},
      {:joken, "~> 1.1"},
-     {:mellon, "~> 0.1.1"}]
+     {:mellon, "~> 0.1.1"},
+     {:bureaucrat, "~> 0.1.4"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

@@ -21,6 +21,6 @@ defmodule CulturalTrailApi.SessionController do
   def validate(conn, _params) do
     conn
     |> put_status(200)
-    |> render(CulturalTrailApi.UserView, "show.json", user: %User{email: "test"})
+    |> render(CulturalTrailApi.UserView, "valid.json", user: %{})
   end
 end
