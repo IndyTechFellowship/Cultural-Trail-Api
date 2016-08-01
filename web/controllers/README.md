@@ -2,6 +2,11 @@
 
 * [CulturalTrailApi.DamagedItemsController](#culturaltrailapidamageditemscontroller)
   * [index](#culturaltrailapidamageditemscontrollerindex)
+* [CulturalTrailApi.IssueController](#culturaltrailapiissuecontroller)
+  * [create](#culturaltrailapiissuecontrollercreate)
+  * [delete](#culturaltrailapiissuecontrollerdelete)
+  * [show](#culturaltrailapiissuecontrollershow)
+  * [update](#culturaltrailapiissuecontrollerupdate)
 * [CulturalTrailApi.RegistrationController](#culturaltrailapiregistrationcontroller)
   * [create](#culturaltrailapiregistrationcontrollercreate)
 * [CulturalTrailApi.SessionController](#culturaltrailapisessioncontroller)
@@ -16,7 +21,7 @@
 * __Path:__ /api/damages
 * __Request headers:__
 ```
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNzJ9.dv2J8jN2XOsKrf5M_fG7OYgkqCO2Vznu_xdgTnNMSMc
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTk4fQ.m83xrMy4b1M-R9hs2Ep5KHmpUDvd2pBoweSJ0qTFSzE
 ```
 ##### Response
 * __Status__: 200
@@ -24,7 +29,7 @@ api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNzJ9.dv2J
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: 4j5loocd69e28srap9rbvn4k4lhm05ne
+x-request-id: 66vsq67toiugvck2d6192o1ua16m70ol
 ```
 * __Response body:__
 ```json
@@ -39,6 +44,174 @@ x-request-id: 4j5loocd69e28srap9rbvn4k4lhm05ne
       ]
     }
   ]
+}
+```
+
+## CulturalTrailApi.IssueController
+### CulturalTrailApi.IssueController.create
+#### creates and renders resource when data is valid
+##### Request
+* __Method:__ POST
+* __Path:__ /api/issues
+* __Request headers:__
+```
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTg2fQ.S4GP9s4AmtftzrPnjpNY0hj_J5MDO_ViEQNFgOfs1Aw
+accept: application/json
+content-type: multipart/mixed; charset: utf-8
+```
+* __Request body:__
+```json
+{
+  "issue": {
+    "user_id": 1186,
+    "priority": 42,
+    "name": "some content",
+    "lng": "120.5",
+    "lat": "120.5",
+    "imageUrl": "some content",
+    "description": "some content"
+  }
+}
+```
+##### Response
+* __Status__: 201
+* __Response headers:__
+```
+content-type: application/json; charset=utf-8
+cache-control: max-age=0, private, must-revalidate
+x-request-id: mr5jtkqdkfr67edd5v3va08pdltg6n7v
+location: /api/issues/255
+```
+* __Response body:__
+```json
+{
+  "data": {
+    "resolvedDate": null,
+    "reportedDate": "2016-07-31T22:12:44Z",
+    "reportedBy": "something@test.com",
+    "priority": 42,
+    "open": true,
+    "name": "some content",
+    "lng": 120.5,
+    "lat": 120.5,
+    "imageUrl": "some content",
+    "id": 255,
+    "description": "some content"
+  }
+}
+```
+
+### CulturalTrailApi.IssueController.delete
+#### deletes chosen resource
+##### Request
+* __Method:__ DELETE
+* __Path:__ /api/issues/257
+* __Request headers:__
+```
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTg4fQ.ke-_aqtrvajQMA0V99LULW1FlQTM4zie5iob8sTbrhU
+accept: application/json
+```
+##### Response
+* __Status__: 204
+* __Response headers:__
+```
+cache-control: max-age=0, private, must-revalidate
+x-request-id: t6jcshemutjvjug22u73dlpasdengtk6
+```
+* __Response body:__
+```json
+
+```
+
+### CulturalTrailApi.IssueController.show
+#### shows chosen resource
+##### Request
+* __Method:__ GET
+* __Path:__ /api/issues/258
+* __Request headers:__
+```
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTg5fQ.p6FiTyXIHP8dErk_G1PkBHsyqsAryXiOqzce9PysNjE
+accept: application/json
+```
+##### Response
+* __Status__: 200
+* __Response headers:__
+```
+content-type: application/json; charset=utf-8
+cache-control: max-age=0, private, must-revalidate
+x-request-id: hkm5tdrpa35dhj4p6nnsrdekuqj2633d
+```
+* __Response body:__
+```json
+{
+  "data": {
+    "resolvedDate": "2016-07-31T22:12:45Z",
+    "reportedDate": "2016-07-31T22:12:45Z",
+    "reportedBy": "something@test.com",
+    "priority": 42,
+    "open": true,
+    "name": "some content",
+    "lng": 120.5,
+    "lat": 120.5,
+    "imageUrl": "some content",
+    "id": 258,
+    "description": "some content"
+  }
+}
+```
+
+### CulturalTrailApi.IssueController.update
+#### updates and renders chosen resource when data is valid
+##### Request
+* __Method:__ PUT
+* __Path:__ /api/issues/256
+* __Request headers:__
+```
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTg3fQ.lOOydjrBiJnPukjX_lpdh5-L3aNgTa2CWU79jZHxAvw
+accept: application/json
+content-type: multipart/mixed; charset: utf-8
+```
+* __Request body:__
+```json
+{
+  "issue": {
+    "user_id": 1187,
+    "resolvedDate": "2010-04-17 14:00:00",
+    "reportedDate": "2010-04-17 14:00:00",
+    "priority": 42,
+    "open": true,
+    "name": "some content",
+    "lng": "120.5",
+    "lat": "120.5",
+    "imageUrl": "some content",
+    "description": "some content"
+  }
+}
+```
+##### Response
+* __Status__: 200
+* __Response headers:__
+```
+content-type: application/json; charset=utf-8
+cache-control: max-age=0, private, must-revalidate
+x-request-id: unj25tmv0j0api106glo8v285ndhkfb7
+```
+* __Response body:__
+```json
+{
+  "data": {
+    "resolvedDate": null,
+    "reportedDate": "2010-04-17T14:00:00Z",
+    "reportedBy": "something@test.com",
+    "priority": 42,
+    "open": true,
+    "name": "some content",
+    "lng": 120.5,
+    "lat": 120.5,
+    "imageUrl": "some content",
+    "id": 256,
+    "description": "some content"
+  }
 }
 ```
 
@@ -68,13 +241,13 @@ content-type: multipart/mixed; charset: utf-8
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: bphhn958jpbp2p8ua9ta4aeltvpaj8e8
+x-request-id: h46ohd8ms8op4hkauhucd3gfbqtac4vu
 ```
 * __Response body:__
 ```json
 {
   "data": {
-    "id": 179,
+    "id": 1195,
     "email": "someone@example.com"
   }
 }
@@ -106,13 +279,13 @@ content-type: multipart/mixed; charset: utf-8
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: qu7nggvl19kbgp4vfk2gin0clko0a6d2
+x-request-id: 6aidmkr75svoqhohceckr5kgquaq67a8
 ```
 * __Response body:__
 ```json
 {
   "data": {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNzV9.FhFyqJvN5F9UbEyhHZcbvTERuAk1o2sRrbB55qfq1fQ"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTkzfQ.AcqKMSiASw_XqyTQsK69ibyCNVZvrYVym_vICrhrXEg"
   }
 }
 ```
@@ -125,7 +298,7 @@ x-request-id: qu7nggvl19kbgp4vfk2gin0clko0a6d2
 * __Request headers:__
 ```
 accept: application/json
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNzR9.0sBOhexcZ_vF0LAzQQbnh4cLIALPfC-hdeAy7RCqeLg
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMTkxfQ._U6FkPT2_qy4tUCtU1IyGFIPH2x2EIcFW2mEdJl8wn4
 ```
 ##### Response
 * __Status__: 200
@@ -133,7 +306,7 @@ api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNzR9.0sBO
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: cvje1bdv8kboi44cvac8ehl152hoarhb
+x-request-id: kii53svo3cakfmis2tab1bliuoasv2ij
 ```
 * __Response body:__
 ```json

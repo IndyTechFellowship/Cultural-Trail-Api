@@ -19,7 +19,7 @@ defmodule CulturalTrailApi.Mixfile do
   def application do
     [mod: {CulturalTrailApi, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :timex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,7 +40,8 @@ defmodule CulturalTrailApi.Mixfile do
      {:comeonin, "~> 2.5"},
      {:joken, "~> 1.1"},
      {:mellon, "~> 0.1.1"},
-     {:bureaucrat, "~> 0.1.4"}]
+     {:bureaucrat, "~> 0.1.4"},
+     {:timex, "~> 3.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

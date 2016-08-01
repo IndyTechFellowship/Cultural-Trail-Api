@@ -23,6 +23,8 @@ end
 
     get "/auth/validate", SessionController, :validate
     get "/damages", DamagedItemsController, :index
+
+    resources "/issues", IssueController, except: [:new, :edit]
   end
 
   scope "/", CulturalTrailApi do
