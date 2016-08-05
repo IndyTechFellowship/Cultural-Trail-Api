@@ -5,12 +5,13 @@ defmodule CulturalTrailApi.User do
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
+    field :email_verified, :boolean
 
     timestamps
   end
 
-  @required_fields ~w(email password)
-  @optional_fields ~w()
+  @required_fields ~w(email)
+  @optional_fields ~w(password email_verified)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

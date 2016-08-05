@@ -5,17 +5,14 @@ defmodule CulturalTrailApi.ErrorViewTest do
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(CulturalTrailApi.ErrorView, "404.html", []) ==
-           "Page not found"
+    assert render(CulturalTrailApi.ErrorView, "404.json", []) == %{errors: %{message: "Not Found"}}
   end
 
   test "render 500.html" do
-    assert render_to_string(CulturalTrailApi.ErrorView, "500.html", []) ==
-           "Server internal error"
+    assert render(CulturalTrailApi.ErrorView, "500.json", []) == %{errors: %{message: "Server Error"}}
   end
 
   test "render any other" do
-    assert render_to_string(CulturalTrailApi.ErrorView, "505.html", []) ==
-           "Server internal error"
+    assert render(CulturalTrailApi.ErrorView, "505.json", []) == %{errors: %{message: "Server Error"}}
   end
 end

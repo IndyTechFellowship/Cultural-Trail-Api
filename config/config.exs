@@ -5,12 +5,16 @@
 # is restricted to this project.
 use Mix.Config
 
+config :sendgrid,
+  api_key: System.get_env("SENDGRID_API_KEY")
+
 # Configures the endpoint
 config :cultural_trail_api, CulturalTrailApi.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "dI+hDREptGNAr7ObMCiNR2BUVIF73cXHftR3+i1kSo/V6NnwumhqJCRpkz9Jd7gV",
-  render_errors: [accepts: ~w(html json)],
+  debug_errors: false,
+  render_errors: [view: CulturalTrailApi.ErrorView, format: "json", accepts: ~w(json)],
   pubsub: [name: CulturalTrailApi.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

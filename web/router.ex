@@ -33,6 +33,7 @@ end
     resources "/users", UserController
 
     post "/auth", RegistrationController, :create
+    get  "/auth/email/confirm/:id", RegistrationController, :verify
     post "/auth/login", SessionController, :login
   end
 
