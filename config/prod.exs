@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :cultural_trail_api, CulturalTrailApi.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
+  url: [host: "ec2-52-206-122-212.compute-1.amazonaws.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
