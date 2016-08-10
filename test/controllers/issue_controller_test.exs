@@ -5,12 +5,12 @@ defmodule CulturalTrailApi.IssueControllerTest do
   alias CulturalTrailApi.User
   @valid_attrs %{description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
   @invalid_attrs %{}
-  @user_valid_attrs %{email: "something@test.com", password: "validPassword"}
-  @result_attrs %{reportedBy: "something@test.com", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
+  @user_valid_attrs %{email: "something@test.com", password: "validPassword", name: "Fake Name"}
+  @result_attrs %{reportedBy: "Fake Name", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
 
   setup %{conn: conn} do
 
-    user_changeset = User.changeset(%User{}, %{email: "something@test.com", password: "validPassword"})
+    user_changeset = User.changeset(%User{}, %{email: "something@test.com", password: "validPassword", name: "Fake Name"})
     {:ok, user} = Repo.insert user_changeset
     token = User.generate_token(user)
     conn = conn() |> put_req_header("api-token", "Token: " <> token)

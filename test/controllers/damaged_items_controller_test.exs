@@ -9,7 +9,7 @@ defmodule CulturalTrailApi.DamagedItemsControllerTest do
 
   setup do
     item_changeset = DamageItems.changeset(%DamageItems{}, @valid_attrs)
-    user_changeset = User.changeset(%User{}, %{email: "something@test.com", password: "validPassword"})
+    user_changeset = User.changeset(%User{}, %{email: "something@test.com", password: "validPassword", name: "Fake Name"})
     {:ok, user} = Repo.insert user_changeset
     token = User.generate_token(user)
     {:ok, damaged_item} = Repo.insert item_changeset

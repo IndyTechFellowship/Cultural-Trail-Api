@@ -2,11 +2,12 @@ defmodule CulturalTrailApi.SessionControllerTest do
   use CulturalTrailApi.ConnCase
 
   alias CulturalTrailApi.User
-  @valid_attrs %{email: "user@example.com", password: "validPassword"}
-  @invalid_attrs %{email: "non-existing-user@example.com", password: "no-password"}
+  @reg_attrs %{email: "user@example.com", password: "validPassword", name: "username"}
+  @login_attrs %{email: "user@example.com", password: "validPassword"}
+  @invalid_attrs %{email: "non-existing-user@example.com", password: "no-password", name: "username"}
 
   setup do
-    changeset = User.changeset(%User{}, @valid_attrs)
+    changeset = User.changeset(%User{}, @reg_attrs)
     {:ok, user} = Repo.insert changeset
     token = User.generate_token(user)
 
@@ -20,7 +21,7 @@ defmodule CulturalTrailApi.SessionControllerTest do
   end
 
   test "Login a registered user", %{conn: conn} do
-    conn = post conn, session_path(conn, :login), user: @valid_attrs
+    conn = post conn, session_path(conn, :login), user: @login_attrs
     conn |> doc
     assert json_response(conn, 200)["data"]["token"] != nil
   end

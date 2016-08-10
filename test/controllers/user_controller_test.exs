@@ -3,7 +3,7 @@ defmodule CulturalTrailApi.UserControllerTest do
 
   alias CulturalTrailApi.User
 
-  @valid_attrs %{email: "someone@example.com", password: "validPassword"}
+  @valid_attrs %{email: "someone@example.com", password: "validPassword", name: "username"}
   @invalid_attrs %{}
 
   setup do

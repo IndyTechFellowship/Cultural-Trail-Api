@@ -3,7 +3,7 @@ defmodule CulturalTrailApi.UserTest do
 
   alias CulturalTrailApi.User
 
-  @valid_attrs %{email: "some content", password: "somePassword"}
+  @valid_attrs %{email: "some content", password: "somePassword", name: "some name"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

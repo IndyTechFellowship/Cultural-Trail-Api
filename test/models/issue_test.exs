@@ -8,7 +8,7 @@ defmodule CulturalTrailApi.IssueTest do
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
-    user_changeset = User.changeset(%User{}, %{email: "something@test.com", password: "validPassword"})
+    user_changeset = User.changeset(%User{}, %{email: "something@test.com", password: "validPassword", name: "Fake Name"})
     {:ok, user} = Repo.insert user_changeset
     attrs = Map.put(@valid_attrs, :user_id, user.id)
     changeset = Issue.changeset(%Issue{}, attrs)

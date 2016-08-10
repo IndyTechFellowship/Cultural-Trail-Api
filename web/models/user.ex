@@ -6,11 +6,12 @@ defmodule CulturalTrailApi.User do
     field :password_hash, :string
     field :password, :string, virtual: true
     field :email_verified, :boolean
+    field :name, :string
 
     timestamps
   end
 
-  @required_fields ~w(email)
+  @required_fields ~w(email name)
   @optional_fields ~w(password email_verified)
 
   @doc """

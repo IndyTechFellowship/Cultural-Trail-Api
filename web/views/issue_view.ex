@@ -21,7 +21,7 @@ defmodule CulturalTrailApi.IssueView do
         open: issue.open,
         reportedDate: issue.reportedDate,
         resolvedDate: issue.resolvedDate,
-        reportedBy: issue.user.email}
+        reportedBy: issue.user.name}
       else
         %{id: issue.id,
           name: issue.name,
