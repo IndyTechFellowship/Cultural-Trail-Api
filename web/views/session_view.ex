@@ -10,7 +10,7 @@ defmodule CulturalTrailApi.SessionView do
     %{token: session}
   end
 
-  def render("error.json", %{message: message}) do
-    %{message: message}
+  def render("error.json", %{error: message}) do
+    %{error: message}
   end
 end
