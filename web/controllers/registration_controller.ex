@@ -41,9 +41,11 @@ defmodule CulturalTrailApi.RegistrationController do
     changeset = User.changeset(user, %{"email_verified": true})
     case Repo.update(changeset) do
       {:ok, user} ->
-        conn
-        |> put_status(200)
-        |> render(CulturalTrailApi.EmailVerificationView, "confirmation.json")
+        front_end_url = Application.get_env(:cultural_trail_api, :web_url)
+        redirect conn, external: front_end_url
+        #conn
+        #|> put_status(200)
+        #|> render(CulturalTrailApi.EmailVerificationView, "confirmation.json")
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
