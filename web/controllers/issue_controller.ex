@@ -6,8 +6,9 @@ defmodule CulturalTrailApi.IssueController do
   plug :scrub_params, "issue" when action in [:create, :update]
 
   def index(conn, _params) do
-    issues = Repo.all(Issue) |> Repo.preload(:user)
-    render(conn, "index.json", issues: issues)
+    issues = Repo.all(Issue)
+    issues_with_users = Repo.preload(issues, :user)
+    render(conn, "index.json", issues: issues_with_users)
   end
 
   def create(conn, %{"issue" => issue_params}) do
