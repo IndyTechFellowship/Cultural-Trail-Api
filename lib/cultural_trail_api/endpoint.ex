@@ -35,7 +35,7 @@ defmodule CulturalTrailApi.Endpoint do
     key: "_cultural_trail_api_key",
     signing_salt: "2Ge80v1X"
 
-  plug Corsica, origins: "*", allow_headers: ["accept", "content-type"]
+  plug Corsica, origins: "*", allow_headers: ["accept", "content-type", "api-token"]
 
   plug CulturalTrailApi.Router
 end
