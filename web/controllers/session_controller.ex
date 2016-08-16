@@ -17,7 +17,7 @@ defmodule CulturalTrailApi.SessionController do
       else
         conn
         |> put_status(200)
-        |> render(CulturalTrailApi.SessionView, "show.json", token: token)
+        |> render(CulturalTrailApi.SessionView, "show.json", %{token: token, user_id: user.id})
       end
     else
 
