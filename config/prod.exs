@@ -18,11 +18,14 @@ config :cultural_trail_api, :web_url, "http://indy-cultural-trail-api.herokuapp.
 config :cultural_trail_api, CulturalTrailApi.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "http://indy-cultural-trail-api.herokuapp.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 config :cultural_trail_api, CulturalTrailApi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: {:system, "DATABASE_URL"}
+  url: {:system, "DATABASE_URL"},
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true
 
 config :sendgrid,
   api_key: {:system, "SENDGRID_API_KEY"}
