@@ -44,3 +44,6 @@ config :cultural_trail_api, CulturalTrailApi.Repo,
   database: "cultural_trail_api_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :sendgrid,
+  api_key: {:system, "SENDGRID_API_KEY"}
