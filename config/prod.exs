@@ -24,9 +24,6 @@ config :cultural_trail_api, CulturalTrailApi.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: {:system, "DATABASE_URL"}
 
-config :sendgrid,
-  api_key: {:system, "SENDGRID_API_KEY"}
-
 # Do not print debug messages in production
 config :logger, level: :info
 
