@@ -3,10 +3,10 @@ defmodule CulturalTrailApi.IssueControllerTest do
 
   alias CulturalTrailApi.Issue
   alias CulturalTrailApi.User
-  @valid_attrs %{description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
+  @valid_attrs %{responsibleParty: "someone", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
   @invalid_attrs %{}
   @user_valid_attrs %{email: "something@test.com", password: "validPassword", name: "Fake Name"}
-  @result_attrs %{reportedBy: "Fake Name", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
+  @result_attrs %{"responsbile_party": "someone", reportedBy: "Fake Name", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", open: true, priority: 42, reportedDate: "2010-04-17 14:00:00", resolvedDate: "2010-04-17 14:00:00"}
 
   setup %{conn: conn} do
 
@@ -38,7 +38,7 @@ defmodule CulturalTrailApi.IssueControllerTest do
   end
 
   test "creates an issue", %{conn: conn, user_id: user_id} do
-    attrs = %{description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", priority: 42, user_id: user_id}
+    attrs = %{responsibleParty: "someone", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", priority: 42, user_id: user_id}
     conn = post conn, issue_path(conn, :create), issue: attrs
     conn |> doc
     assert json_response(conn, 201)["data"]["id"]

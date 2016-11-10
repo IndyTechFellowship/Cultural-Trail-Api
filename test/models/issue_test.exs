@@ -4,7 +4,7 @@ defmodule CulturalTrailApi.IssueTest do
   alias CulturalTrailApi.Issue
   alias CulturalTrailApi.User
 
-  @valid_attrs %{description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", priority: 42, reportedDate: "2010-04-17 14:00:00"}
+  @valid_attrs %{responsibleParty: "person", description: "some content", imageUrl: "some content", lat: "120.5", lng: "120.5", name: "some content", priority: 42, reportedDate: "2010-04-17 14:00:00"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

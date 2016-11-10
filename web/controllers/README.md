@@ -21,7 +21,7 @@
 * __Path:__ /api/damages
 * __Request headers:__
 ```
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNTd9.rJ4Qa6a9zzs_VO0CLgrIy38HNeqo_ZowqHMaTGEU1o0
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzZ9.YmSJj-axtaa4XZATf9x8pM37OORxdW-zD5vtkK5EpO4
 ```
 ##### Response
 * __Status__: 200
@@ -29,7 +29,7 @@ api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNTd9.rJ4Q
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: vgetibj3iuslro7700ee0usg69vaogqf
+x-request-id: 7rlku6b9fdp4on63up5e9pfju2nkjjlk
 ```
 * __Response body:__
 ```json
@@ -55,7 +55,7 @@ x-request-id: vgetibj3iuslro7700ee0usg69vaogqf
 * __Path:__ /api/issues
 * __Request headers:__
 ```
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNTB9.Q2beT4hgdXjqFF410lr30WjTOUmuhD2eo4_eAEJ_pPU
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzF9.SKKr7ii-kSpBTh-aq-_XqIR1ktyAN5Zei9XACqJS8dU
 accept: application/json
 content-type: multipart/mixed; charset: utf-8
 ```
@@ -63,7 +63,8 @@ content-type: multipart/mixed; charset: utf-8
 ```json
 {
   "issue": {
-    "user_id": 250,
+    "user_id": 131,
+    "responsibleParty": "someone",
     "priority": 42,
     "name": "some content",
     "lng": "120.5",
@@ -79,15 +80,16 @@ content-type: multipart/mixed; charset: utf-8
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: iq6hd4j4hojne7u5a0274ld00a5ubd05
-location: /api/issues/72
+x-request-id: 6r92gmf07urstfrfmve1i0qd66sbiji5
+location: /api/issues/35
 ```
 * __Response body:__
 ```json
 {
   "data": {
+    "responsibleParty": "someone",
     "resolvedDate": null,
-    "reportedDate": "2016-08-16T00:59:49Z",
+    "reportedDate": "2016-11-10T02:23:38Z",
     "reportedBy": "Fake Name",
     "priority": 42,
     "open": true,
@@ -95,7 +97,7 @@ location: /api/issues/72
     "lng": 120.5,
     "lat": 120.5,
     "imageUrl": "some content",
-    "id": 72,
+    "id": 35,
     "description": "some content"
   }
 }
@@ -105,10 +107,10 @@ location: /api/issues/72
 #### deletes an issue
 ##### Request
 * __Method:__ DELETE
-* __Path:__ /api/issues/75
+* __Path:__ /api/issues/37
 * __Request headers:__
 ```
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNTZ9.v8ieAbuLqdnldiYVUlUePXiDOeyz9QDeoxN8kmBEsKc
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzR9.TdOOCyK_-GsWo4sMMXlXi10alwlJBvRaV883O-CVtEA
 accept: application/json
 ```
 ##### Response
@@ -116,7 +118,7 @@ accept: application/json
 * __Response headers:__
 ```
 cache-control: max-age=0, private, must-revalidate
-x-request-id: i5q0cephgk7sphl6c00jh7n80af2ngso
+x-request-id: ttfuiavmu1iaci0dku55fkef3m2dal2u
 ```
 * __Response body:__
 ```json
@@ -127,10 +129,10 @@ x-request-id: i5q0cephgk7sphl6c00jh7n80af2ngso
 #### shows an issue by id
 ##### Request
 * __Method:__ GET
-* __Path:__ /api/issues/73
+* __Path:__ /api/issues/34
 * __Request headers:__
 ```
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNTF9.z2D9-oyl8YlX8GDlS_edPQgizK-hocZmBryqYhhfoSs
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzB9.Hl1T1Q7htf0WKKtfCu-uRDsuuz5VnwQjaik2XyHcJzE
 accept: application/json
 ```
 ##### Response
@@ -139,14 +141,15 @@ accept: application/json
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: jmm9udpoqiclaorbulr6th4tp1vmgr41
+x-request-id: 4p96a5vnlrnhbur5c1gvcthubgo3d2kh
 ```
 * __Response body:__
 ```json
 {
   "data": {
-    "resolvedDate": "2016-08-16T00:59:50Z",
-    "reportedDate": "2016-08-16T00:59:50Z",
+    "responsibleParty": null,
+    "resolvedDate": "2016-11-10T02:23:38Z",
+    "reportedDate": "2016-11-10T02:23:38Z",
     "reportedBy": "Fake Name",
     "priority": 42,
     "open": true,
@@ -154,7 +157,7 @@ x-request-id: jmm9udpoqiclaorbulr6th4tp1vmgr41
     "lng": 120.5,
     "lat": 120.5,
     "imageUrl": "some content",
-    "id": 73,
+    "id": 34,
     "description": "some content"
   }
 }
@@ -164,10 +167,10 @@ x-request-id: jmm9udpoqiclaorbulr6th4tp1vmgr41
 #### updates an issue
 ##### Request
 * __Method:__ PUT
-* __Path:__ /api/issues/74
+* __Path:__ /api/issues/36
 * __Request headers:__
 ```
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNTJ9.fwpc2rsYAwI1FkE5JrVMWrMXhYnh7emX6-RDbubu_xk
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMzJ9.FfsAfUcIcLKz0cx_GHhxdT2s0-z8JfzNkEDeWVVwbnE
 accept: application/json
 content-type: multipart/mixed; charset: utf-8
 ```
@@ -175,7 +178,8 @@ content-type: multipart/mixed; charset: utf-8
 ```json
 {
   "issue": {
-    "user_id": 252,
+    "user_id": 132,
+    "responsibleParty": "someone",
     "resolvedDate": "2010-04-17 14:00:00",
     "reportedDate": "2010-04-17 14:00:00",
     "priority": 42,
@@ -194,12 +198,13 @@ content-type: multipart/mixed; charset: utf-8
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: 0478ti5hcoks0ou9vatndc32mkqmt8qp
+x-request-id: 8s4onh838qnif5khvdccjashn05eimhq
 ```
 * __Response body:__
 ```json
 {
   "data": {
+    "responsibleParty": "someone",
     "resolvedDate": null,
     "reportedDate": "2010-04-17T14:00:00Z",
     "reportedBy": "Fake Name",
@@ -209,7 +214,7 @@ x-request-id: 0478ti5hcoks0ou9vatndc32mkqmt8qp
     "lng": 120.5,
     "lat": 120.5,
     "imageUrl": "some content",
-    "id": 74,
+    "id": 36,
     "description": "some content"
   }
 }
@@ -242,14 +247,14 @@ content-type: multipart/mixed; charset: utf-8
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: k89kcujia6r4707r0p1hs38cchvugiqv
+x-request-id: qgc0hd3qddv7lpgmlrco56pfa1ri2piv
 ```
 * __Response body:__
 ```json
 {
   "data": {
     "name": "username",
-    "id": 246,
+    "id": 121,
     "email": "someone@example.com"
   }
 }
@@ -281,14 +286,14 @@ content-type: multipart/mixed; charset: utf-8
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: kns29o1mn0gqaclq3tdg831g714c4avt
+x-request-id: q95vskbe418s3eoums8imng1huvcmns5
 ```
 * __Response body:__
 ```json
 {
   "data": {
-    "user_id": 243,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNDN9.sSTBQFnJ1B0VPI2dL8bqzYBZwAhLtZuXmmJz24z38X4"
+    "user_id": 126,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjZ9.S9auG4Q6ZOcGfPZFwdy060m1tIugG7qN3CtCir3WlB4"
   }
 }
 ```
@@ -301,7 +306,7 @@ x-request-id: kns29o1mn0gqaclq3tdg831g714c4avt
 * __Request headers:__
 ```
 accept: application/json
-api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNDJ9.fy2csecYsLSCYQYUVyxva7R0EQcGLhC00Ka1O0eqiWQ
+api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjR9.uMaowjcfcC7zWj-zFk6ClasbNKzLn6Gobs69lTvT_w8
 ```
 ##### Response
 * __Status__: 200
@@ -309,7 +314,7 @@ api-token: Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNDJ9.fy2c
 ```
 content-type: application/json; charset=utf-8
 cache-control: max-age=0, private, must-revalidate
-x-request-id: 625r48pcnveph988aainvsl6hcjc4eqh
+x-request-id: j59eo77u3evj6mdm5ucviav44m5trjj2
 ```
 * __Response body:__
 ```json

@@ -21,7 +21,9 @@ defmodule CulturalTrailApi.IssueView do
         open: issue.open,
         reportedDate: issue.reportedDate,
         resolvedDate: issue.resolvedDate,
-        reportedBy: issue.user.name}
+        reportedBy: issue.user.name,
+        responsibleParty: issue.responsibleParty
+      }
       else
         %{id: issue.id,
           name: issue.name,
@@ -33,6 +35,7 @@ defmodule CulturalTrailApi.IssueView do
           open: issue.open,
           reportedDate: issue.reportedDate,
           resolvedDate: issue.resolvedDate,
+          responsibleParty: issue.responsibleParty,
           reportedBy: ""}
     end
 
