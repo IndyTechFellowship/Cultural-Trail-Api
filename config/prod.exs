@@ -13,12 +13,16 @@ use Mix.Config
 # which you typically run after static files are built.
 
 config :cultural_trail_api, :env, :prod
-config :cultural_trail_api, :web_url, "http://ec2-52-72-211-110.compute-1.amazonaws.com/login"
+config :cultural_trail_api, :web_url, "http://indy-cultural-trail-api.herokuapp.com"
 
 config :cultural_trail_api, CulturalTrailApi.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "ec2-52-206-122-212.compute-1.amazonaws.com", port: 80],
+  url: [host: "http://indy-cultural-trail-api.herokuapp.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
+
+config :cultural_trail_api, CulturalTrailApi.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: {:system, "DATABASE_URL"}
 
 # Do not print debug messages in production
 config :logger, level: :info
